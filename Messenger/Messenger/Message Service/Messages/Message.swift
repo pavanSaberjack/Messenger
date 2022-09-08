@@ -11,20 +11,30 @@ protocol Message {
     var id: String { get }
 }
 
+extension Message {
+    var timeSent: Date {
+        return .now
+    }
+    
+    var received: Date {
+        return .now
+    }
+    
+    var groupId: String? {
+        return nil
+    }
+}
+
 struct TextMessage: Message {
     var id: String {
         return "UU"
     }
     
-    func messageWith(text: String) {
-        
-    }
+    var message: String
 }
 
 struct ImageMessage: Message {
     var id: String {
         return "UU"
     }
-    
-    
 }
